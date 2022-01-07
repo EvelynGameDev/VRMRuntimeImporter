@@ -13,7 +13,7 @@ UniVrmのバージョンはv0.92.0です。
 
 unitypackageファイルをあなたのUnityプロジェクトにドラッグ&ドロップしてください。
 
-[VrmRuntimeImporter_1_0_0.unitypackage](https://github.com/EvelynGameDev/VRMRuntimeImporter/releases/)
+[VrmRuntimeImporter_1_0_1.unitypackage](https://github.com/EvelynGameDev/VRMRuntimeImporter/releases/)
 
 ## 使い方
 
@@ -25,7 +25,7 @@ unitypackageファイルをあなたのUnityプロジェクトにドラッグ&�
 
 __VRMRuntimeImporter Prefab__
 
-VRMRuntimeImporterというプレハブを用意しているので、あなたが使いたいシーンに追加してください。
+VRMRuntimeImporterというプレハブを、あなたが使いたいシーンに追加してください。
 
 ParentTransformにキャラクターのゲームオブジェクトを表示させたい親要素を設定できます。
 
