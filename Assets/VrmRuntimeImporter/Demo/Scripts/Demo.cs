@@ -17,7 +17,7 @@ namespace VRMRuntimeImporter
 
             string path = PlayerPrefs.GetString(VRM_FILE_PATH_KEY);
 
-            if ((System.IO.File.Exists(path)))
+            if (System.IO.File.Exists(path))
             {
                 VRMRuntimeImporter.LoadVrm(path);
             }

@@ -62,13 +62,13 @@ public class Demo : MonoBehaviour
 
         string path = PlayerPrefs.GetString(VRM_FILE_PATH_KEY);
 
-        if ((System.IO.File.Exists(path)))
+        if (System.IO.File.Exists(path))
         {
             VRMRuntimeImporter.LoadVrm(path);
         }
     }
 
-    // Using the UseVRM method of the VRMRuntimeImporter, the file browser will open and the VRM can be selected; if a VRM file is selected, the loading process will be executed.
+    // You can receive the game object and VRM path by registering it in the VRMRuntimeImporter's Callback.
     public void HandleVrmGameObject(GameObject go, string vrmFilepath)
     {
         Debug.Log("HandleVrmGameObject");
@@ -80,7 +80,7 @@ public class Demo : MonoBehaviour
         // TODO: Your game's own code here
     }
 
-    // To open the file browser and load the VRM file, use the UseVRM method.
+    // Using the UseVRM method of the VRMRuntimeImporter, the file browser will open and the VRM can be selected; if a VRM file is selected, the loading process will be executed.
     public void OpenFileBrowser()
     {
       VRMRuntimeImporter.UseVRM();
