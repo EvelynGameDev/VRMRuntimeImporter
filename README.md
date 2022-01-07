@@ -37,11 +37,57 @@ Also, the function registered in Callback will be executed after the VRM file is
 public class LoadCallbackEvent : UnityEvent<GameObject, string> { }
 ```
 
-![inspector of VRMRuntimeImporter Prefab](./Doc/usage-1.jpeg)
+![inspector of VRMRuntimeImporter Prefab](./Doc/usage_1.jpeg)
 
 Using the UseVRM method of the VRMRuntimeImporter class will open the file browser. Then select the VRM file in the file browser, and the 3D model of the VRM file will appear on the screen.
 
-![button](./Doc/usage-2.jpeg)
+![button](./Doc/usage_2.jpeg)
+
+__Sample__
+
+```cs
+using UnityEngine;
+using VRMRuntimeImporter;
+
+public class Demo : MonoBehaviour
+{
+    [SerializeField] VRMRuntimeImporter VRMRuntimeImporter;
+
+    private readonly string VRM_FILE_PATH_KEY = "VRM_FILE_PATH_KEY";
+
+    // This is a sample of loading the previously selected VRM file when the game is launched.
+    private void Awake()
+    {
+        if (!PlayerPrefs.HasKey(VRM_FILE_PATH_KEY)) return;
+
+        string path = PlayerPrefs.GetString(VRM_FILE_PATH_KEY);
+
+        if ((System.IO.File.Exists(path)))
+        {
+            VRMRuntimeImporter.LoadVrm(path);
+        }
+    }
+
+    // Using the UseVRM method of the VRMRuntimeImporter, the file browser will open and the VRM can be selected; if a VRM file is selected, the loading process will be executed.
+    public void HandleVrmGameObject(GameObject go, string vrmFilepath)
+    {
+        Debug.Log("HandleVrmGameObject");
+        Debug.Log(go);
+        Debug.Log(vrmFilepath);
+        PlayerPrefs.SetString(VRM_FILE_PATH_KEY, vrmFilepath);
+        PlayerPrefs.Save();
+
+        // TODO: Your game's own code here
+    }
+
+    // To open the file browser and load the VRM file, use the UseVRM method.
+    public void OpenFileBrowser()
+    {
+      VRMRuntimeImporter.UseVRM();
+    }
+}
+```
+
 
 ## License
 
