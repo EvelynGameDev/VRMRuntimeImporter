@@ -55,4 +55,4 @@ Evelyn GameDev
 
 ## English README is here
 
-[Endlish README](./README.md)
+[English README](./README.md)
