@@ -11,7 +11,7 @@ Unity製のアプリケーションの実行中にVRMファイルをロードし
 
 UniVrmのバージョンはv0.92.0です。
 
-unipackageファイルをあなたのUnityプロジェクトにドラッグ&ドロップしてください。
+unitypackageファイルをあなたのUnityプロジェクトにドラッグ&ドロップしてください。
 
 [VrmRuntimeImporter_1_0_0.unitypackage](https://github.com/EvelynGameDev/VRMRuntimeImporter/releases/)
 
