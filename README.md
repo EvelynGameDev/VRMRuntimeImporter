@@ -11,9 +11,9 @@ This package contains UniVrm and the Runtime File Browser. (These are both free 
 
 The UniVrm version of this package is v0.92.0.
 
-Drag and drop the unipackage file into your Unity project.
+Drag and drop the unitypackage file into your Unity project.
 
-[VrmRuntimeImporter_1_0_0.unitypackage](https://github.com/EvelynGameDev/VRMRuntimeImporter/releases/)
+[VrmRuntimeImporter_1_0_1.unitypackage](https://github.com/EvelynGameDev/VRMRuntimeImporter/releases/)
 
 
 ## Usage
