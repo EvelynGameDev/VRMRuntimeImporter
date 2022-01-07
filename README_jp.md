@@ -7,7 +7,7 @@ Unity製のアプリケーションの実行中にVRMファイルをロードし
 このパッケージはUniVrmとRuntime File Browserを含んでいます。(これらはどちらも無料公開されているアセットです。)
 
 * [UniVrm](https://github.com/vrm-c/UniVRM)
-* [Runtime File Browser](https://assetstore.unity.com/packages/tools/gui/runtime-file-browser-113006?aid=1011liAjm)
+* [Runtime File Browser](https://assetstore.unity.com/packages/tools/gui/runtime-file-browser-113006?aid=1011liAjm) <= これはGithubで[UnitySimpleFileBrowser](https://github.com/yasirkula/UnitySimpleFileBrowser)として公開されています。
 
 UniVrmのバージョンはv0.92.0です。
 

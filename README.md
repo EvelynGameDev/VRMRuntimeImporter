@@ -7,7 +7,7 @@ This is a package for adding characters to the screen by loading a VRM file whil
 This package contains UniVrm and the Runtime File Browser. (These are both free and publicly available assets.)
 
 * [UniVrm](https://github.com/vrm-c/UniVRM)
-* [Runtime File Browser](https://assetstore.unity.com/packages/tools/gui/runtime-file-browser-113006?aid=1011liAjm)
+* [Runtime File Browser](https://assetstore.unity.com/packages/tools/gui/runtime-file-browser-113006?aid=1011liAjm) <= This is available on Github as [UnitySimpleFileBrowser](https://github.com/yasirkula/UnitySimpleFileBrowser).
 
 The UniVrm version of this package is v0.92.0.
 
