@@ -29,7 +29,12 @@ VRMRuntimeImporterというプレハブを用意しているので、あなた�
 
 ParentTransformにキャラクターのゲームオブジェクトを表示させたい親要素を設定できます。
 
-また、Callbackに登録した関数はVRMファイルのロード後に実行されます。引数としてキャラクターのゲームオブジェクトを受け取ることができます。
+また、Callbackに登録した関数はVRMファイルのロード後に実行されます。引数としてキャラクターのゲームオブジェクトとVRMのファイルパスを受け取ることができます。
+
+```cs
+[System.Serializable]
+public class LoadCallbackEvent : UnityEvent<GameObject, string> { }
+```
 
 ![inspector of VRMRuntimeImporter Prefab](./Doc/usage-1.jpeg)
 

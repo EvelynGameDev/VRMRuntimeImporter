@@ -17,6 +17,9 @@ namespace VRMRuntimeImporter
 		[Header("To execute after the VRM file is loaded")]
 		[SerializeField] LoadCallbackEvent Callback;
 
+		[Header("Whether to delete the previously loaded VRM file when loading a new VRM file.")]
+		[SerializeField] bool DeletePrevVrmFlag = true;
+
 		private GameObject _prevVRMGameObject = null;
 
 		public void UseVRM()
@@ -44,7 +47,10 @@ namespace VRMRuntimeImporter
 				{
 					System.IO.Directory.CreateDirectory(Application.persistentDataPath + "/vrm");
 				}
-				DeletePrevVrmFiles();
+				if (DeletePrevVrmFlag)
+				{
+					DeletePrevVrmFiles();
+				}
 				string destinationPath = Path.Combine(Application.persistentDataPath + "/vrm", FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
 
 				Debug.Log(destinationPath);
@@ -54,20 +60,24 @@ namespace VRMRuntimeImporter
 				{
 					DestroyVrm(_prevVRMGameObject);
 				}
-				GameObject go = LoadVrm(destinationPath);
-				if (ParentTransform != null)
-				{
-					go.transform.SetParent(ParentTransform);
-				}
-				if (Callback != null)
-				{
-					Callback.Invoke(go);
-				}
-				_prevVRMGameObject = go;
+				LoadVrm(destinationPath);
 			}
 		}
 
-		private GameObject LoadVrm(string vrmFilePath)
+		private void LoadedAdjustment(GameObject go, string vrmFilepath)
+		{
+			if (ParentTransform != null)
+			{
+				go.transform.SetParent(ParentTransform);
+			}
+			if (Callback != null)
+			{
+				Callback.Invoke(go, vrmFilepath);
+			}
+			_prevVRMGameObject = go;
+		}
+
+		public GameObject LoadVrm(string vrmFilePath)
 		{
 			GlbFileParser parser = new GlbFileParser(vrmFilePath);
 			GltfData gltfData = parser.Parse();
@@ -78,6 +88,8 @@ namespace VRMRuntimeImporter
 				RuntimeGltfInstance instance = context.Load();
 				instance.EnableUpdateWhenOffscreen();
 				instance.ShowMeshes();
+
+				LoadedAdjustment(instance.Root, vrmFilePath);
 				return instance.Root;
 			}
 		}
@@ -101,5 +113,5 @@ namespace VRMRuntimeImporter
 	}
 
 	[System.Serializable]
-	public class LoadCallbackEvent : UnityEvent<GameObject> { }
+	public class LoadCallbackEvent : UnityEvent<GameObject, string> { }
 }

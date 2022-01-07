@@ -24,13 +24,18 @@ Drag and drop the unipackage file into your Unity project.
 
 I have prepared a demo scene, which will help you understand how to use it.
 
-__VRMRuntimeImporter Prefab__
+__VRMRuntimeImporter Class__
 
 I have a prefab called VRMRuntimeImporter that you can add to the scene you want to use.
 
 You can set the ParentTransform to the parent element where you want the character's game object to appear.
 
-Also, the function registered in Callback will be executed after the VRM file is loaded. You can accept the character's game object as an argument.
+Also, the function registered in Callback will be executed after the VRM file is loaded. You can accept the character's game object and vrm file path as arguments.
+
+```cs
+[System.Serializable]
+public class LoadCallbackEvent : UnityEvent<GameObject, string> { }
+```
 
 ![inspector of VRMRuntimeImporter Prefab](./Doc/usage-1.jpeg)
 

@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e19ed96a4cf541a5b85a671198ebae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VRMRuntimeImporter: {fileID: 970420739}
 --- !u!4 &6440103
 Transform:
   m_ObjectHideFlags: 0
